@@ -1,6 +1,5 @@
-﻿void Start()
+﻿void Start(int time)
 {
-    int time = 10;
     int currentTime = 0;
 
     while (currentTime != time)
@@ -10,6 +9,18 @@
         Console.WriteLine(currentTime);
         Thread.Sleep(1000);
     }
+
+    Console.Clear();
+    Console.WriteLine("Finished stopwatch!");
+    Thread.Sleep(2500);
 }
 
-Start();
+void Menu(){
+    Console.Clear();
+    Console.WriteLine("S - Seconds");
+    Console.WriteLine("M = Minutes");
+    Console.WriteLine("0 = Exit");
+    Console.WriteLine("How long do you want to count?");
+}
+
+Menu();
