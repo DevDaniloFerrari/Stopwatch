@@ -15,7 +15,8 @@
     Thread.Sleep(2500);
 }
 
-void Menu(){
+void Menu()
+{
     Console.Clear();
     Console.WriteLine("S - Seconds => 10s = 10 seconds");
     Console.WriteLine("M = Minutes => 1m = 1 minute");
@@ -24,10 +25,16 @@ void Menu(){
 
     string data = Console.ReadLine().ToLower();
     char type = char.Parse(data.Substring(data.Length - 1, 1));
-    int time = int.Parse(data.Substring(0, data.Length - 1)); 
+    int time = int.Parse(data.Substring(0, data.Length - 1));
+    int multiplier = 1;
 
-    Console.WriteLine(type);
-    Console.WriteLine(time);
+    if (type == 'm')
+        multiplier = 60;
+
+    if (time == 0)
+        System.Environment.Exit(0);
+
+    Start(time * multiplier);
 }
 
 Menu();
