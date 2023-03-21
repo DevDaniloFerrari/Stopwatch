@@ -27,6 +27,7 @@ void PreStart(int time){
     Start(time);
 }
 
+
 void Menu()
 {
     Console.Clear();
